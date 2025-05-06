@@ -639,13 +639,13 @@ header {
 /* Украшения */
 .vector-orange-1 {
     position: absolute;
-    top: 300px;
+    top: 380px;
     left: 170px;
 }
 
 .vector-orange-2 {
     position: absolute;
-    top: 400px;
+    top: 480px;
     left: 920px;
 }
 
@@ -665,13 +665,13 @@ header {
 
 .ellipse-orange-1 {
     position: absolute;
-    top: 70px;
+    top: 150px;
     left: 1100px;
 }
 
 .ellipse-orange-2 {
     position: absolute;
-    top: 550px;
+    top: 630px;
     left: 150px;
     transform: rotate(180deg);
 }
@@ -698,4 +698,98 @@ header {
 footer .nav {
     justify-content: left;
     gap: 30%;
+}
+
+/* Popup */
+.popup-call-to-buy-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.popup-call-to-buy-overlay .call-to-buy {
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 970px;
+    padding: 0;
+}
+
+.popup-call-to-buy-overlay .call-to-buy .a-call {
+    padding: 54px 70px;
+}
+
+.popup-call-to-buy-overlay .call-to-buy .a-call h2 {
+    margin: 0 0 30px 0;
+}
+
+.popup-call-to-buy-overlay .call-to-buy .a-call::before {
+    content: none;
+}
+
+.popup-call-to-buy-overlay .call-to-buy .a-call button {
+    margin: 0;
+}
+
+.vector-popup-1 {
+    position: absolute;
+    top: 230px;
+    left: 80px;
+}
+
+.vector-popup-2 {
+    position: absolute;
+    top: 330px;
+    left: 730px;
+}
+
+.vector-popup-1 img:nth-child(1),
+.vector-popup-2 img:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.vector-popup-1 img:nth-child(2),
+.vector-popup-2 img:nth-child(2) {
+    position: absolute;
+    top: 10px;
+    left: 80px;
+}
+
+.ellipse-popup-1 {
+    position: absolute;
+    top: 170px;
+    left: 830px;
+}
+
+.ellipse-popup-2 {
+    position: absolute;
+    top: 460px;
+    left: 180px;
+    transform: rotate(180deg);
+}
+
+.ellipse-popup-1 img:nth-child(1),
+.ellipse-popup-2 img:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.ellipse-popup-1 img:nth-child(2),
+.ellipse-popup-2 img:nth-child(2) {
+    position: absolute;
+    top: 60px;
+    left: 0;
+}
+.ellipse-popup-1 img:nth-child(3),
+.ellipse-popup-2 img:nth-child(3) {
+    position: absolute;
+    top: 40px;
+    left: 40px;
 }
