@@ -30,6 +30,11 @@
     --bg-blob-color: #191A1E;
     --txt-call-color: #424242;
     --txt-call-old-price-color: #7e7e7e;
+    --bg-input-color: #F6F6F6;
+}
+
+button {
+    cursor: pointer;
 }
 
 .container {
@@ -349,10 +354,9 @@ header {
 }
 
 .about-slider .slick-arrow {
-    position: absolute;
+    position: sticky;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 10;
     font-size: 0;
     width: 68px;
     height: 68px;
@@ -700,14 +704,19 @@ footer .nav {
     gap: 30%;
 }
 
-/* Popup */
-.popup-call-to-buy-overlay {
+/* Popup call to buy */
+.popup-call-to-buy-overlay,
+.popup-order-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
+    display: block;
+}
+/* todo - удалить*/
+.popup-call-to-buy-overlay {
     display: none;
 }
 
@@ -792,4 +801,109 @@ footer .nav {
     position: absolute;
     top: 40px;
     left: 40px;
+}
+
+/* Popup order */
+.popup-order-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.popup-order {
+    position: relative;
+    max-width: 80%;
+    overflow-y: auto;
+    width: 896px;
+    background-color: var(--txt-color);
+    text-align: center;
+    font-family: var(--font-bp);
+    padding: 60px 70px;
+    border-radius: 60px;
+    z-index: 12;
+}
+
+.popup-order h2 {
+    font-size: 2.81rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.popup-order table {
+    width: 100%;
+    font-size: 1.56rem;
+    text-transform: uppercase;
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--bg-color);
+    margin-bottom: 60px;
+}
+.popup-order table td:nth-child(1) {
+    text-align: left;
+    color: var(--bg-btn-color);
+    font-weight: 800;
+    width: 40%;
+}
+.popup-order table td:nth-child(2) {
+    text-align: left;
+    width: 40%;
+}
+.popup-order table td:nth-child(3) {
+    text-align: right;
+    font-weight: 800;
+}
+.popup-order table td:nth-child(3) span {
+    font-weight: 400;
+}
+
+.popup-order h3 {
+    font-size: 2.25rem;
+    text-transform: uppercase;
+}
+
+.popup-order .last-name,
+.popup-order .first,
+.popup-order .patronymic,
+.popup-order .region,
+.popup-order .city,
+.popup-order .number-home,
+.popup-order .postal-index,
+.popup-order .phone,
+.popup-order .email {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-order .first-patronymic,
+.popup-order .phone-email {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.popup-order .first,
+.popup-order .patronymic,
+.popup-order .phone,
+.popup-order .email {
+    width: 47%;
+}
+
+.popup-order label {
+    text-align: left;
+    margin: 25px 0 25px 30px;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    color: var(--txt-call-color);
+}
+.popup-order input {
+    background-color: var(--bg-input-color);
+    border: none;
+    border-radius: 60px;
+    height: 73px;
+}
+
+.popup-order button {
+    margin-top: 70px;
+    font-size: 1.25rem;
+    border-radius: 27px;
 }
