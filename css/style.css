@@ -56,10 +56,15 @@ header {
     background: linear-gradient(to left top, #112120, #574230, #C4754A);
     border-top-left-radius: 100px;
     border-top-right-radius: 100px;
-    -webkit-mask-image: url(https://i.postimg.cc/jSHQRCk8/bg.png);
-    mask-image: url(https://i.postimg.cc/jSHQRCk8/bg.png);
-    -webkit-mask-size: 100%;
-    mask-size: 100%;
+}
+header .mask {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    background: url("../images/header/bg.png") no-repeat;
+    height: 153px;
+    z-index: 5;
 }
 
 .nav {
@@ -88,12 +93,19 @@ header {
 }
 
 .content {
+    position: relative;
     display: flex;
     flex-direction: row;
     padding-top: 30px;
+    height: 780px;
+}
+
+.content .text {
+    flex-basis: 520px;
 }
 
 .content .proposal {
+    display: inline-block;
     font-size: 1.125rem;
     font-weight: 500;
     color: var(--txt-color);
@@ -142,8 +154,12 @@ header {
 }
 
 .xiaomi-band-7 img {
-    width: 100%;
-    transform: scale(1.3) translate(3%, 10%);
+    position: absolute;
+    top: 90px;
+    left: 590px;
+    width: 600px;
+    transform: scale(1.5) translate(3%, 10%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 85%, 0% 85%);
 }
 
 /* Украшения */
@@ -354,7 +370,7 @@ header {
 }
 
 .about-slider .slick-arrow {
-    position: sticky;
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
     font-size: 0;
