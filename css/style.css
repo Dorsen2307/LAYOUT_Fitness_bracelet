@@ -27,10 +27,15 @@
     --subtxt-2-color: #878787;
     --buy-color: #FEFEFE;
     --bg-btn-color: #F58D56;
+    --bg-btn-hover-color: #46b13f;
     --bg-blob-color: #191A1E;
     --txt-call-color: #424242;
     --txt-call-old-price-color: #7e7e7e;
     --bg-input-color: #F6F6F6;
+}
+
+body {
+    min-width: 627px;
 }
 
 button {
@@ -86,10 +91,32 @@ header .mask {
 }
 
 .nav .menu a {
+    position: relative;
     text-decoration: none;
     text-transform: uppercase;
     color: var(--txt-color);
     font-size: 1rem;
+    transition: .3s;
+}
+
+.nav .menu a:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 10px;
+    display: block;
+    width: 0;
+    height: 1px;
+    background: var(--txt-color);
+    transition: width .3s;
+}
+
+.nav .menu a:hover {
+    transform: scale(115%);
+}
+
+.nav .menu a:hover:after {
+    width: 100%;
 }
 
 .content {
@@ -139,14 +166,74 @@ header .mask {
 }
 
 .buy {
+    position: relative;
     font-size: 1.6rem;
     text-transform: uppercase;
     white-space: nowrap;
     color: var(--buy-color);
-    border: none;
+    border: 2px solid var(--bg-btn-color);
     border-radius: 27px;
     padding: 30px 47px;
     background-color: var(--bg-btn-color);
+    overflow: visible;
+    transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+}
+
+.buy::before,
+.buy::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border: 2px solid var(--bg-btn-color);
+    border-radius: inherit;
+    opacity: 0;
+    animation: pulseOut 2s ease-out infinite;
+}
+
+.buy::after {
+    animation-delay: 1s;
+}
+
+@keyframes pulseOut {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+.buy:hover {
+    background-color: var(--bg-btn-hover-color);
+    border-color: var(--bg-btn-hover-color);
+}
+
+.buy:hover::before,
+.buy:hover::after {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border: 2px solid green;
+    border-radius: inherit;
+    opacity: 0;
+    animation: pulseOutInvert 1s ease-out infinite;
+}
+
+.buy:hover::after {
+    animation-delay: .5s;
+}
+
+@keyframes pulseOutInvert {
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    0% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
 }
 
 .xiaomi-band-7 {
@@ -385,6 +472,8 @@ header .mask {
 
 .about-slider .slick-arrow.slick-prev {
     left: 0;
+    transition: scale .5s;
+    z-index: 5;
 }
 .about-slider .slick-arrow.slick-prev::before {
     position: absolute;
@@ -397,8 +486,15 @@ header .mask {
     z-index: 11;
 }
 
+.about-slider .slick-arrow.slick-prev:hover,
+.about-slider .slick-arrow.slick-next:hover {
+    scale: 1.2;
+}
+
 .about-slider .slick-arrow.slick-next {
     right: 0;
+    transition: scale .5s;
+    z-index: 5;
 }
 .about-slider .slick-arrow.slick-next::before {
     position: absolute;
@@ -450,12 +546,20 @@ header .mask {
     margin-top: 135px;
 }
 
-.m1-slider,
-.m2-slider,
-.m3-slider,
-.m4-slider {
+.m1-slider img,
+.m2-slider img,
+.m3-slider img,
+.m4-slider img {
     width: 100%;
     height: 302px;
+    transition: all .3s;
+}
+
+.m1-slider:hover img,
+.m2-slider:hover img,
+.m3-slider:hover img,
+.m4-slider:hover img {
+    box-shadow: 0 0 50px rgba(230, 230, 230, 0.66);
 }
 
 .m1-slider img,
@@ -521,6 +625,14 @@ header .mask {
     gap: 20px;
 }
 
+.and-so .row .col img {
+    transition: all .5s;
+}
+
+.and-so .row .col:hover img {
+    box-shadow: 0 0 30px rgba(230, 230, 230, 0.66);
+}
+
 .pluses {
     display: flex;
     flex-direction: row;
@@ -534,6 +646,11 @@ header .mask {
     border-radius: 60px;
     text-align: center;
     padding: 60px 20px 0 20px;
+    transition: all .5s;
+}
+
+.pluses .blob:hover {
+    box-shadow: 0 0 30px rgba(230, 230, 230, 0.66);
 }
 
 .pluses .blob:nth-child(1),
@@ -1080,10 +1197,15 @@ footer .nav {
 
     .call-to-buy .a-call {
         padding-top: 20px;
+        border-radius: 20px;
     }
 
     .call-to-buy .a-call::before {
         display: none;
+    }
+
+    .call-to-buy .a-call h2 {
+        font-size: 7vw;
     }
 
     .nav {
@@ -1110,6 +1232,36 @@ footer .nav {
 
     .and-so .row .col {
         margin-top: 20px;
+    }
+
+    .and-so .row .col img {
+        border-radius: 20px;
+    }
+
+    .pluses .blob {
+        border-radius: 20px;
+    }
+
+    .call-to-buy h2 {
+        font-size: 7vw;
+    }
+
+    .call-to-buy h2 span {
+        font-size: 12vw;
+    }
+
+    .m1-content h2,
+    .m2-content h2,
+    .m3-content h2,
+    .m4-content h2 {
+        font-size: 6vw;
+    }
+
+    .m1-content p,
+    .m2-content p,
+    .m3-content p,
+    .m4-content p {
+        font-size: 4vw;
     }
 }
 
