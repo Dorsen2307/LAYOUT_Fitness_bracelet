@@ -544,15 +544,14 @@ header .mask {
     flex-direction: row;
     gap: 65px;
     margin-top: 135px;
+    width: 100%;
 }
 
-.m1-slider img,
-.m2-slider img,
-.m3-slider img,
-.m4-slider img {
-    width: 100%;
-    height: 302px;
-    transition: all .3s;
+.m1-slider,
+.m2-slider,
+.m3-slider,
+.m4-slider {
+    width: 50%;
 }
 
 .m1-slider:hover img,
@@ -571,13 +570,14 @@ header .mask {
     height: 100%;
     width: 100%;
     object-fit: cover;
+    transition: all .3s;
 }
 
 .m1-content,
 .m2-content,
 .m3-content,
 .m4-content {
-    flex-basis: 70vw;
+    width: 50%;
 }
 
 .m1-content h2,
@@ -623,10 +623,6 @@ header .mask {
     display: flex;
     flex-direction: row;
     gap: 20px;
-}
-
-.and-so .row .col img {
-    transition: all .5s;
 }
 
 .and-so .row .col:hover img {
@@ -1152,7 +1148,7 @@ footer .nav {
     .m2-slider,
     .m3-slider,
     .m4-slider {
-
+        width: 100%;
     }
 
     .m1-content,
@@ -1161,6 +1157,7 @@ footer .nav {
     .m4-content {
         text-align: center;
         flex-basis: 0;
+        width: 100%;
     }
 
     .m2-slider,

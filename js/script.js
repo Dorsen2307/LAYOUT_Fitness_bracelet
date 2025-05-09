@@ -33,7 +33,7 @@ function closePopupOrder() {
 
 window.onload = function(){
     if (popupOrder.style.display === 'none'){
-        setTimeout(openPopupCall, 2000);
+        setTimeout(openPopupCall, 15000);
     }
 }
 
