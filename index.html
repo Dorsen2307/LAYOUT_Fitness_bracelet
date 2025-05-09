@@ -25,7 +25,7 @@
                     <p class="proposal">Акционное предложение</p>
                     <h1>Xiaomi Band 7<br><span>"Большие"</span><br>изменения</h1>
                     <p>Самый ожидаемый продукт Xiaomi в 2022 году</p>
-                    <button class="buy">Купить сейчас</button>
+                    <button class="buy" onclick="openPopupOrder()">Купить сейчас</button>
                 </div>
                 <div class="xiaomi-band-7">
                     <img src="images/header/xiaomi_band_7.png" alt="Xiaomi Band 7">
@@ -72,7 +72,7 @@
                 <div class="about-txt">
                     <h2>Новая версия популярного<span>Фитнес-браслета</span></h2>
                     <p>Совершенно новая версия «Умного» трекера от компании Xiaomi которого все ждали</p>
-                    <button class="buy">Купить сейчас</button>
+                    <button class="buy" onclick="openPopupOrder()">Купить сейчас</button>
                 </div>
 
                 <!-- todo - сделать свой слайдер -->
@@ -185,7 +185,7 @@
                     <h2>Успей приобрести<br>по акционному предложению</h2>
                     <p class="first">3200 руб</p>
                     <p class="second">2500<span>руб</span></p>
-                    <button class="buy">Купить сейчас</button>
+                    <button class="buy" onclick="openPopupOrder()">Купить сейчас</button>
 
                     <!-- Украшения -->
                     <div class="ellipse-orange-1">
@@ -209,7 +209,7 @@
                 </div> <!-- a-call -->
 
                 <h2>Xiaomi Band 7<span>“Большие”</span>изменения</h2>
-                <button class="buy">Купить сейчас</button>
+                <button class="buy" onclick="openPopupOrder()">Купить сейчас</button>
             </div> <!-- call-to-buy -->
         </section>
 
@@ -227,13 +227,13 @@
         </footer>
     </div> <!-- container -->
 
-    <div class="popup-call-to-buy-overlay">
+    <div class="popup-call-to-buy-overlay" id="popupCall" style="display: none">
         <div class="call-to-buy">
             <div class="a-call">
                 <h2>Успей приобрести<br>по акционному предложению</h2>
                 <p class="first">3200 руб</p>
                 <p class="second">2500<span>руб</span></p>
-                <button class="buy">Купить сейчас</button>
+                <button class="buy" onclick="openPopupOrder()">Купить сейчас</button>
 
                 <!-- Украшения -->
                 <div class="ellipse-popup-1">
@@ -258,7 +258,7 @@
         </div> <!-- call-to-buy -->
     </div> <!-- popup-call-to-buy-overlay -->
 
-    <div class="popup-order-overlay">
+    <div class="popup-order-overlay" id="popupOrder" style="display: flex">
         <div class="popup-order">
             <h2>Ваш заказ</h2>
 

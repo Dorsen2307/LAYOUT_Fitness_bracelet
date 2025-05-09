@@ -7,3 +7,44 @@ $(document).ready(function(){
     });
 });
 
+const popupCall = document.getElementById('popupCall');
+const popupOrder = document.getElementById('popupOrder');
+
+function togglePopup(popupId, displayStyle) {
+    popupId.style.display = displayStyle;
+}
+
+function openPopupCall() {
+    togglePopup(popupCall, 'block');
+}
+
+function closePopupCall() {
+    togglePopup(popupCall, 'none');
+}
+
+function openPopupOrder() {
+    togglePopup(popupCall, 'none');
+    togglePopup(popupOrder, 'flex');
+}
+
+function closePopupOrder() {
+    togglePopup(popupOrder, 'none');
+}
+
+window.onload = function(){
+    if (popupOrder.style.display === 'none'){
+        setTimeout(openPopupCall, 2000);
+    }
+}
+
+popupCall.addEventListener('click', function(event) {
+    if (event.target === popupCall) {
+        closePopupCall();
+    }
+});
+
+popupOrder.addEventListener('click', function(event) {
+    if (event.target === popupOrder) {
+        closePopupOrder();
+    }
+});
