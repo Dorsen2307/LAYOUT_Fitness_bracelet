@@ -62,7 +62,7 @@ header .mask {
     bottom: -1px;
     left: 0;
     right: 0;
-    background: url("../images/header/bg.png") no-repeat;
+    background: url("../images/header/bg.png") no-repeat center;
     height: 153px;
     z-index: 5;
 }
@@ -104,7 +104,7 @@ header .mask {
     flex-basis: 520px;
 }
 
-.content .proposal {
+.content .text .proposal {
     display: inline-block;
     font-size: 1.125rem;
     font-weight: 500;
@@ -118,7 +118,7 @@ header .mask {
     white-space: nowrap;
 }
 
-.content h1 {
+.content .text h1 {
     font-size: 3rem;
     font-weight: 900;
     color: var(--txt-color);
@@ -126,11 +126,11 @@ header .mask {
     margin-bottom: 45px;
 }
 
-.content h1 span {
+.content .text h1 span {
     font-size: 6rem;
 }
 
-.content p {
+.content .text p {
     font-size: 1.6rem;
     font-weight: 500;
     color: var(--subtxt-1-color);
@@ -159,7 +159,7 @@ header .mask {
     left: 590px;
     width: 600px;
     transform: scale(1.5) translate(3%, 10%);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 85%, 0% 85%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 85%);
 }
 
 /* Украшения */
@@ -364,6 +364,8 @@ header .mask {
 
 /* Слайдер */
 .about-slider {
+    display: flex;
+    align-items: center;
     position: relative;
     padding: 0 40px;
     max-width: 65%;
@@ -583,8 +585,7 @@ header .mask {
     background-image: url("../images/call_to_buy/1.png");
     background-repeat: no-repeat;
     background-size: contain;
-
-    height: 680px;
+    height: 100%;
     width: 85%;
     top: -540px;
     left: 50%;
@@ -928,3 +929,187 @@ footer .nav {
     font-size: 1.25rem;
     border-radius: 27px;
 }
+
+@media (max-width: 1440px) {
+    .xiaomi-band-7 img {
+        transform: scale(1);
+        top: 170px;
+        left: 530px;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .ellipse-braun,
+    .vector-grey {
+        display: none;
+    }
+
+    .about-band .about-txt h2 {
+        /*white-space: nowrap;*/
+    }
+
+    .ellipse-orange-1,
+    .vector-orange-2 {
+        left: 800px;
+    }
+
+    .call-to-buy {
+        padding-top: 500px;
+    }
+
+    .call-to-buy .a-call::before {
+        top: -450px;
+
+    }
+}
+
+@media (max-width: 1200px) {
+    .xiaomi-band-7,
+    .price {
+        display: none;
+    }
+
+    .content {
+        display: block;
+    }
+
+    .content .text {
+        text-align: center;
+    }
+
+    .ellipse-grey {
+        top: 200px;
+        left: 150px;
+    }
+
+    .pluses {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .ellipse-orange-1,
+    .vector-orange-2 {
+        display: none;
+    }
+
+    .call-to-buy {
+        padding-top: 400px;
+    }
+
+    .call-to-buy .a-call {
+        padding-top: 100px;
+    }
+
+    .call-to-buy .a-call::before {
+        top: -350px;
+    }
+}
+
+@media (max-width: 992px) {
+    .ellipse-grey,
+    .vector-braun {
+        display: none;
+    }
+
+    .ellipse-orange-2,
+    .vector-orange-1 {
+        display: none;
+    }
+
+    .about-band {
+        flex-direction: column;
+        margin-bottom: 135px;
+    }
+
+    .about-band .about-txt {
+        text-align: center;
+        margin-bottom: 80px;
+    }
+
+    .about-band .about-slider {
+        max-width: none;
+    }
+
+    .m1, .m2, .m3, .m4 {
+        flex-direction: column;
+        margin: 0 0 80px 0;
+        gap: 40px;
+    }
+
+    .m1-slider,
+    .m2-slider,
+    .m3-slider,
+    .m4-slider {
+
+    }
+
+    .m1-content,
+    .m2-content,
+    .m3-content,
+    .m4-content {
+        text-align: center;
+        flex-basis: 0;
+    }
+
+    .m2-slider,
+    .m4-slider {
+        order: -1;
+    }
+
+    .call-to-buy {
+        padding-top: 300px;
+    }
+
+    .call-to-buy .a-call {
+        padding-top: 70px;
+    }
+
+    .call-to-buy .a-call::before {
+        top: -280px;
+    }
+
+    footer .nav {
+        gap: 20%;
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .call-to-buy {
+        padding-top: 80px;
+    }
+
+    .call-to-buy .a-call {
+        padding-top: 20px;
+    }
+
+    .call-to-buy .a-call::before {
+        display: none;
+    }
+
+    .nav {
+        flex-direction: column;
+    }
+
+    .nav .logo {
+        text-align: center;
+        padding-top: 0;
+    }
+
+    .nav .menu {
+        padding-top: 20px;
+        justify-content: space-between;
+    }
+
+    .and-so h3 {
+        margin: 0;
+    }
+
+    .and-so .row {
+        display: block;
+    }
+
+    .and-so .row .col {
+        margin-top: 20px;
+    }
+}
+
