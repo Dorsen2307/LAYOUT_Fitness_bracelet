@@ -1,3 +1,4 @@
+/* Шрифты */
 @font-face {
     font-family: 'Bliss Pro';
     src: url('../fonts/BlissPro.eot');
@@ -11,7 +12,7 @@
     font-display: swap;
 }
 
-
+/* Общие настройки */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -34,6 +35,7 @@
     --bg-input-color: #F6F6F6;
 }
 
+
 body {
     min-width: 627px;
 }
@@ -50,7 +52,7 @@ button {
     font-family: var(--font-bp);
 }
 
-.p-lr {
+.padding-left-right {
     padding-left: 100px;
     padding-right: 100px;
 }
@@ -64,7 +66,7 @@ header {
 }
 header .mask {
     position: absolute;
-    bottom: -1px;
+    bottom: -1px; /* скрываем линию среза */
     left: 0;
     right: 0;
     background: url("../images/header/bg.png") no-repeat center;
@@ -90,7 +92,7 @@ header .mask {
     gap: 4.4rem;
 }
 
-.nav .menu a {
+.nav .menu .menu-a {
     position: relative;
     text-decoration: none;
     text-transform: uppercase;
@@ -99,7 +101,7 @@ header .mask {
     transition: .3s;
 }
 
-.nav .menu a:after {
+.nav .menu .menu-a:after {
     position: absolute;
     content: "";
     left: 0;
@@ -111,11 +113,11 @@ header .mask {
     transition: width .3s;
 }
 
-.nav .menu a:hover {
+.nav .menu .menu-a:hover {
     transform: scale(115%);
 }
 
-.nav .menu a:hover:after {
+.nav .menu .menu-a:hover:after {
     width: 100%;
 }
 
@@ -145,7 +147,7 @@ header .mask {
     white-space: nowrap;
 }
 
-.content .text h1 {
+.content .text .text-h1 {
     font-size: 3rem;
     font-weight: 900;
     color: var(--txt-color);
@@ -153,11 +155,11 @@ header .mask {
     margin-bottom: 45px;
 }
 
-.content .text h1 span {
+.content .text .text-h1 span {
     font-size: 6rem;
 }
 
-.content .text p {
+.content .text .text-p {
     font-size: 1.6rem;
     font-weight: 500;
     color: var(--subtxt-1-color);
@@ -180,13 +182,19 @@ header .mask {
 }
 
 .buy::before,
-.buy::after {
+.buy::after,
+.buy:hover::before,
+.buy:hover::after {
     content: "";
     position: absolute;
-    inset: -1px;
-    border: 2px solid var(--bg-btn-color);
     border-radius: inherit;
     opacity: 0;
+}
+
+.buy::before,
+.buy::after {
+    inset: -1px; /* отступ наружу от бордюра */
+    border: 2px solid var(--bg-btn-color);
     animation: pulseOut 2s ease-out infinite;
 }
 
@@ -212,28 +220,13 @@ header .mask {
 
 .buy:hover::before,
 .buy:hover::after {
-    content: "";
-    position: absolute;
-    inset: -4px;
+    inset: -4px; /* отступ наружу от бордюра */
     border: 2px solid green;
-    border-radius: inherit;
-    opacity: 0;
-    animation: pulseOutInvert 1s ease-out infinite;
+    animation: pulseOut 1s ease-out reverse infinite;
 }
 
 .buy:hover::after {
     animation-delay: .5s;
-}
-
-@keyframes pulseOutInvert {
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    0% {
-        transform: scale(1.5);
-        opacity: 0;
-    }
 }
 
 .xiaomi-band-7 {
@@ -246,7 +239,7 @@ header .mask {
     left: 590px;
     width: 600px;
     transform: scale(1.5) translate(3%, 10%);
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 85%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 85%); /* скрываем выступающие части часов за маску */
 }
 
 /* Украшения */
@@ -426,18 +419,18 @@ header .mask {
     min-width: 35%;
 }
 
-.about-txt h2 {
+.about-txt .about-txt-h2 {
     text-transform: uppercase;
     font-size: 1.87rem;
     text-align: center;
 }
 
-.about-txt h2 span {
+.about-txt .about-txt-h2 span {
     display: block;
     font-size: 3rem;
 }
 
-.about-txt p {
+.about-txt .about-txt-p {
     color: var(--subtxt-2-color);
     font-size: 1.56rem;
     text-transform: uppercase;
@@ -580,20 +573,20 @@ header .mask {
     width: 50%;
 }
 
-.m1-content h2,
-.m2-content h2,
-.m3-content h2,
-.m4-content h2 {
+.m1-content .m1-content-h2,
+.m2-content .m2-content-h2,
+.m3-content .m3-content-h2,
+.m4-content .m4-content-h2 {
     font-size: 2.81rem;
     text-transform: uppercase;
     line-height: 1.3;
     color: var(--txt-color);
 }
 
-.m1-content p,
-.m2-content p,
-.m3-content p,
-.m4-content p {
+.m1-content .m1-content-p,
+.m2-content .m2-content-p,
+.m3-content .m3-content-p,
+.m4-content .m4-content-p {
     font-size: 1.56rem;
     text-transform: uppercase;
     color: var(--subtxt-2-color);
@@ -611,7 +604,7 @@ header .mask {
     gap: 20px;
 }
 
-.and-so h3 {
+.and-so .and-so-h3 {
     color: var(--txt-color);
     font-size: 2.81rem;
     text-transform: uppercase;
@@ -659,14 +652,14 @@ header .mask {
     flex-basis: 35%;
 }
 
-.pluses .blob h4 {
+.pluses .blob .blob-h4 {
     color: var(--txt-color);
     font-size: 2.3rem;
     text-transform: uppercase;
     padding-bottom: 10px;
 }
 
-.pluses .blob p {
+.pluses .blob .blob-p {
     color: var(--bg-btn-color);
     text-transform: uppercase;
     font-size: 1.25rem;
@@ -705,7 +698,7 @@ header .mask {
     transform: translateX(-50%);
 }
 
-.call-to-buy .a-call h2 {
+.call-to-buy .a-call .a-call-h2 {
     color: var(--txt-call-color);
     font-size: 2.81rem;
     text-transform: uppercase;
@@ -749,14 +742,14 @@ header .mask {
     border-radius: 27px;
 }
 
-.call-to-buy h2 {
+.call-to-buy .call-to-buy-h2 {
     color: var(--txt-color);
     font-size: 3rem;
     text-transform: uppercase;
     margin: 80px 0;
 }
 
-.call-to-buy h2 span {
+.call-to-buy .call-to-buy-h2 span {
     display: block;
     font-size: 6rem;
     font-weight: 900;
@@ -953,13 +946,13 @@ footer .nav {
     z-index: 12;
 }
 
-.popup-order h2 {
+.popup-order .popup-order-h2 {
     font-size: 2.81rem;
     margin-bottom: 20px;
     text-transform: uppercase;
 }
 
-.popup-order table {
+.popup-order .table {
     width: 100%;
     font-size: 1.56rem;
     text-transform: uppercase;
@@ -967,25 +960,25 @@ footer .nav {
     border-bottom: 1px solid var(--bg-color);
     margin-bottom: 60px;
 }
-.popup-order table td:nth-child(1) {
+.popup-order .table .one-column {
     text-align: left;
     color: var(--bg-btn-color);
     font-weight: 800;
     width: 40%;
 }
-.popup-order table td:nth-child(2) {
+.popup-order .table .two-column {
     text-align: left;
     width: 40%;
 }
-.popup-order table td:nth-child(3) {
+.popup-order .table .three-column {
     text-align: right;
     font-weight: 800;
 }
-.popup-order table td:nth-child(3) span {
+.popup-order .table .three-column span {
     font-weight: 400;
 }
 
-.popup-order h3 {
+.popup-order .popup-order-h3 {
     font-size: 2.25rem;
     text-transform: uppercase;
 }
@@ -1017,14 +1010,14 @@ footer .nav {
     width: 47%;
 }
 
-.popup-order label {
+.popup-order .label {
     text-align: left;
     margin: 25px 0 25px 30px;
     font-size: 1.25rem;
     text-transform: uppercase;
     color: var(--txt-call-color);
 }
-.popup-order input {
+.popup-order .input {
     background-color: var(--bg-input-color);
     border: none;
     border-radius: 60px;
